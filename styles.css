@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: rgb(30, 30, 30);
+  color: #cfb53b;
+}
+
+.header {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.title-div .fa-newspaper {
+  color: grey;
+}
+
+.input-articles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  max-width: 250px;
+}
+
+.search {
+  width: 100%;
+  padding-right: 35px; /* Space for the button */
+  padding-left: 10px;
+  height: 35px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.icon {
+  color: #888;
+  font-size: 16px;
+}
