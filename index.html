@@ -13,22 +13,78 @@
   </head>
   <body>
     <div class="header">
-        <div class="title-div">
-            <h1>Harry's News <i class="fa-solid fa-newspaper"></i></h1>
-            <div class="input-articles">
-                <input
-                    type="text"
-                    class="search"
-                    placeholder="Search for articles"
-                />
-                <button type="button" class="search-btn">
-                    <i class="fa-solid fa-magnifying-glass icon"></i>
-                </button>
-            </div>
+      <div class="title-div">
+        <h1>Harry's News <i class="fa-solid fa-newspaper"></i></h1>
+        <div class="input-articles">
+          <input
+            type="text"
+            class="search-articles"
+            placeholder="Search for articles"
+          />
+          <button type="button" class="search-btn-articles">
+            <i class="fa-solid fa-magnifying-glass icon"></i>
+          </button>
         </div>
-        
       </div>
-      <div class="weather-div"></div>
+      <div class="weather-div">
+        <div class="weather-container"></div>
+
+        <div class="input-weather">
+          <input type="text" class="search-weather" placeholder="Location" />
+          <button type="button" class="search-btn-weather">
+            <i class="fa-solid fa-magnifying-glass icon"></i>
+          </button>
+        </div>
+      </div>
     </div>
+
+    <div class="line-div">
+      <hr />
+    </div>
+
+    <div class="tab-container">
+      <nav class="tabs">
+        <div class="tab-uk">UK</div>
+        <button class="uk-btn">click me</button>
+        <div class="tab-world">WORLD</div>
+        <select class="tab-categories">
+          <option value="">CATEGORIES</option>
+          <option value="tech">TECH</option>
+          <option value="business">BUSINESS</option>
+          <option value="climate">CLIMATE</option>
+          <option value="sport">SPORT</option>
+        </select>
+      </nav>
+    </div>
+
+    <div class="news-container">
+      <div class="main-news">
+        <div class="main-news-left">
+          <img src="test-image.webp" class="news-tile-img" />
+          <h2 class="news-tile-headline">UK GOES BANKRUPT</h2>
+          <hr class="news-tile-divider" />
+          <p class="news-tile-desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum,
+            excepturi! Eos, laudantium
+          </p>
+        </div>
+        <div class="main-news-right">
+          <img src="test-image.webp" class="news-tile-img" />
+          <h2 class="news-tile-headline">COVID IS BACK!!</h2>
+          <hr class="news-tile-divider" />
+          <p class="news-tile-desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit
+            consequuntur assumenda
+          </p>
+        </div>
+      </div>
+      <div class="small-news">
+        <div class="small-news-left"></div>
+        <div class="small-news-right"></div>
+      </div>
+    </div>
+
+    <script type="module" src="getWeather.js"></script>
+    <script type="module" src="getNews.js"></script>
   </body>
 </html>

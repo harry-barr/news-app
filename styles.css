@@ -6,20 +6,39 @@
 }
 
 body {
-  background: rgb(30, 30, 30);
+  background: linear-gradient(100deg, #2f1d1d, #303030);
   color: #cfb53b;
 }
+
+/*
+
+    STYLES FOR HEADER
+
+*/
 
 .header {
   display: flex;
   margin-top: 20px;
-  margin-left: 10px;
+  margin-left: 30px;
+  gap: 150px;
+  position: sticky;
 }
 
 .title-div {
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+.weather-div {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.weather-div h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 .title-div .fa-newspaper {
@@ -34,7 +53,16 @@ body {
   max-width: 250px;
 }
 
-.search {
+.input-weather {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+  bottom: 39px;
+}
+
+.search-articles,
+.search-weather {
   width: 100%;
   padding-right: 35px; /* Space for the button */
   padding-left: 10px;
@@ -45,7 +73,8 @@ body {
   font-weight: bold;
 }
 
-.search-btn {
+.search-btn-articles,
+.search-btn-weather {
   position: absolute;
   right: 0;
   height: 100%;
@@ -62,4 +91,145 @@ body {
 .icon {
   color: #888;
   font-size: 16px;
+}
+
+.line-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+.line-div hr {
+  width: 100%;
+  max-width: 1000px;
+  border: 0;
+  height: 2px;
+  background-color: wheat;
+  border-radius: 2px;
+}
+
+/* 
+    STYLES FOR FETCH WEATHER DATA
+*/
+
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.weather-container h1 {
+  font-size: 2.75rem;
+}
+.weather-container .city-name {
+  font-size: 3rem;
+}
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 
+
+    STYLES FOR TAB BAR
+
+*/
+
+.tab-container {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-container .tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+.tab-container .tabs .tab-categories {
+  border: none;
+  color: #cfb53b;
+  background: #303030;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.75rem;
+  -webkit-appearance: none;
+  padding-bottom: 15px;
+}
+.tab-container .tabs .tab-uk {
+  margin-right: 30px;
+}
+.tab-container .tabs .tab-world {
+  margin-left: 30px;
+}
+
+.tab-container .tabs .tab-categories:hover,
+.tab-container .tabs .tab-uk:hover,
+.tab-container .tabs .tab-world:hover {
+  border-bottom: 5px solid #cfb53b;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+/*
+
+  NEWS STYLES
+
+*/
+
+.news-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.news-container .main-news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 60px;
+}
+.news-container .main-news .main-news-left,
+.news-container .main-news .main-news-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(247, 227, 227);
+  height: 400px;
+  width: 500px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+.news-tile-headline {
+  margin-bottom: 2px;
+  font-weight: bolder;
+  font-size: 1.75rem;
+}
+.news-tile-divider {
+  width: 100%;
+  max-width: 300px;
+  border: 0;
+  height: 2px;
+  background-color: black;
+  border-radius: 2px;
+}
+.news-tile-desc {
+  margin: 10px 10px;
+  text-align: center;
+}
+.news-tile-img {
+  width: 450px;
+  height: 280px;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  border-radius: 2px;
 }
