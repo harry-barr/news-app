@@ -31,9 +31,9 @@ const getWeather = async function () {
       "beforeend",
       `<div>
             <h1 class="city-temp">${data.current.temperature} °C</h1>
+            <h2 class="city-name">${data.location.name}</h2>
           </div>
             <div class="current-weather">
-              <h2 class="city-name">${data.location.name}</h2>
               <p class="city-desc">${data.current.weather_descriptions}</p>
               <p class="temp-feels-like">Feels like ${data.current.feelslike} °C</p>
               <p class="date">${data.location.localtime}</p>
