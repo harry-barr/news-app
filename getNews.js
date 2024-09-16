@@ -3,15 +3,20 @@ const newsAPI = new FetchWrapper(
   "https://newsapi.org/v2/top-headlines?country=us"
 );
 const getNewsBtns = document.querySelectorAll(".get-news-btn");
-const homeBtn = document.querySelector(".home-btn");
-const techBtn = document.querySelector(".technology");
-const businessBtn = document.querySelector(".business");
-const scienceBtn = document.querySelector(".science");
-const entertainmentBtn = document.querySelector(".entertainment");
-const sportBtn = document.querySelector(".sport");
 const mainNews = document.querySelector(".main-news");
 const smallNews = document.querySelector(".small-news");
-const categories = document.querySelector(".tab-categories");
+
+const loadHomePageNews = async function () {
+  mainNews.innerHTML = "";
+  smallNews.innerHTML = "";
+  const articles = await fetchNews("headlines"); // Load the "headlines" category as default
+  if (articles) {
+    renderArticles(articles);
+  }
+};
+
+// Fetch default news when the page loads
+window.addEventListener("load", loadHomePageNews);
 
 const renderArticles = function (articles) {
   mainNews.insertAdjacentHTML(
@@ -96,7 +101,9 @@ const getNews = async function (e) {
   e.preventDefault();
   mainNews.innerHTML = "";
   smallNews.innerHTML = "";
-
+  let active = document.querySelector(".active");
+  active.classList.remove("active");
+  e.currentTarget.classList.add("active");
   const category = e.currentTarget.value;
   const articles = await fetchNews(category);
   if (articles) {

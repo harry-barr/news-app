@@ -30,10 +30,12 @@
         <div class="weather-container"></div>
 
         <div class="input-weather">
-          <input type="text" class="search-weather" placeholder="Location" />
-          <button type="button" class="search-btn-weather">
-            <i class="fa-solid fa-magnifying-glass icon"></i>
-          </button>
+          <form class="weather-form">
+            <input type="text" class="search-weather" placeholder="Location" />
+            <button type="button" class="search-btn-weather">
+              <i class="fa-solid fa-magnifying-glass icon"></i>
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -45,7 +47,9 @@
     <div class="tab-container">
       <nav class="tabs">
         <div>
-          <button class="get-news-btn home-btn" value="headlines">Home</button>
+          <button class="get-news-btn home-btn active" value="headlines">
+            Home
+          </button>
           <button class="get-news-btn technology" value="technology">
             Tech
           </button>

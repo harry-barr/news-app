@@ -4,28 +4,31 @@ const weatherAPI = new FetchWrapper(
 );
 const weatherSearchInput = document.querySelector(".search-weather");
 const weatherSearchBtn = document.querySelector(".search-btn-weather");
-const cityName = document.querySelector(".city-name");
-const cityTemp = document.querySelector(".city-temp");
-const cityDesc = document.querySelector(".city-desc");
-const feelsLike = document.querySelector(".temp-feels-like");
-const date = document.querySelector(".date");
 const currentWeather = document.querySelector(".weather-container");
+const weatherForm = document.querySelector(".weather-form");
 
-const lowerCaseAndHypenate = function () {
-  weatherSearchInput.value = weatherSearchInput.value
-    .trim()
-    .replaceAll(" ", "-")
-    .toLowerCase();
+weatherForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  getWeather();
+});
+
+const fetchDefaultWeather = async function () {
+  const defaultCity = "London"; // Set your default city here
+  try {
+    await getWeather(defaultCity); // Fetch weather for the default city
+  } catch (error) {
+    console.error("Error fetching default weather:", error);
+  }
 };
 
-const getWeather = async function () {
+const getWeather = async function (city) {
   currentWeather.innerHTML = "";
-  if (!weatherSearchInput.value) {
+  const searchCity = weatherSearchInput.value || city;
+  if (!searchCity) {
     return alert("You must type in a city name!");
   }
-
   try {
-    const data = await weatherAPI.get(`${weatherSearchInput.value}`);
+    const data = await weatherAPI.get(`${searchCity}`);
     console.log(data);
     currentWeather.insertAdjacentHTML(
       "beforeend",
@@ -44,5 +47,7 @@ const getWeather = async function () {
     console.error(error);
   }
 };
+
+window.addEventListener("load", fetchDefaultWeather);
 
 weatherSearchBtn.addEventListener("click", getWeather);

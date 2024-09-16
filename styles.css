@@ -91,6 +91,10 @@ body {
   padding: 0;
 }
 
+.search-btn-weather {
+  bottom: 1px;
+}
+
 .icon {
   color: #888;
   font-size: 16px;
@@ -104,6 +108,7 @@ body {
   align-items: center;
   margin-top: 20px;
 }
+
 .line-div hr,
 .line-div-2 hr,
 .line-div-footer hr {
@@ -116,12 +121,16 @@ body {
 }
 
 .line-div-footer {
+  margin-top: 40px;
   margin-bottom: 50px;
 }
 
 /* 
     STYLES FOR FETCH WEATHER DATA
 */
+.weather-form {
+  display: flex;
+}
 
 .weather-container {
   display: flex;
@@ -178,6 +187,12 @@ body {
 .get-news-btn:hover {
   color: #ffffff;
   cursor: pointer;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 6px;
+}
+
+.active {
+  color: #ffffff;
   border-bottom: 2px solid #ffffff;
   padding-bottom: 6px;
 }
@@ -286,6 +301,12 @@ SMALL NEWS STYLES
   grid-gap: 20px;
   margin-top: 10px;
   align-items: start;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: #333; /* A dark background to highlight the text */
+  border-radius: 10px; /* Rounded corners for smooth design */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
 .small-news-left,
@@ -296,26 +317,38 @@ SMALL NEWS STYLES
   text-align: center;
 }
 
-.small-news-left p,
-.small-news-right p {
-  margin-bottom: 30px;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  padding: 15px;
-}
-
 .small-news-left {
-  margin-left: 10p;
+  margin-left: 10px;
 }
 
 .small-news-left a,
 .small-news-right a {
   text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+.small-news-left a:hover,
+.small-news-right a:hover {
+  color: #ffcc00; /* Add a bright color or your brand color */
+  text-decoration: underline;
 }
 
 .small-news-left p:hover,
 .small-news-right p:hover {
   text-decoration: underline;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.small-news-left p,
+.small-news-right p {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
