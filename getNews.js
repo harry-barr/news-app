@@ -5,6 +5,7 @@ const newsAPI = new FetchWrapper(
 const getNewsBtns = document.querySelectorAll(".get-news-btn");
 const mainNews = document.querySelector(".main-news");
 const smallNews = document.querySelector(".small-news");
+const alsoInTheNews = document.querySelector(".small-news-title");
 
 const loadHomePageNews = async function () {
   mainNews.innerHTML = "";
@@ -64,7 +65,8 @@ const renderArticles = function (articles) {
   );
   smallNews.insertAdjacentHTML(
     "beforeend",
-    `<div class="small-news-left">
+    `
+    <div class="small-news-left">
           <a href="${articles[2].url}" target="_blank"><p>${articles[2].title}</p></a>
           <a href="${articles[3].url}" target="_blank"><p>${articles[3].title}</p></a>
           <a href="${articles[4].url}" target="_blank"><p>${articles[4].title}</p></a>
@@ -99,8 +101,10 @@ const fetchNews = async function (category) {
 
 const getNews = async function (e) {
   e.preventDefault();
+  smallNews.style.display = "";
   mainNews.innerHTML = "";
   smallNews.innerHTML = "";
+  alsoInTheNews.style.display = "";
   let active = document.querySelector(".active");
   active.classList.remove("active");
   e.currentTarget.classList.add("active");

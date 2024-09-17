@@ -14,7 +14,8 @@
   <body>
     <div class="header">
       <div class="title-div">
-        <h1>Harry's News <i class="fa-solid fa-newspaper"></i></h1>
+        <h1>Harry's News<i class="fa-solid fa-newspaper"></i></h1>
+        <p class="para">a global news aggregator</p>
         <div class="input-articles">
           <input
             type="text"
@@ -30,7 +31,7 @@
         <div class="weather-container"></div>
 
         <div class="input-weather">
-          <form class="weather-form">
+          <form class="weather-form" id="weather-form">
             <input type="text" class="search-weather" placeholder="Location" />
             <button type="button" class="search-btn-weather">
               <i class="fa-solid fa-magnifying-glass icon"></i>
@@ -67,6 +68,7 @@
     <div class="line-div-2"><hr /></div>
     <div class="news-container">
       <div class="main-news"></div>
+      <h2 class="small-news-title">Also in the news</h2>
       <div class="small-news"></div>
     </div>
 
@@ -76,5 +78,6 @@
 
     <script type="module" src="getWeather.js"></script>
     <script type="module" src="getNews.js"></script>
+    <script type="module" src="searchArticles.js"></script>
   </body>
 </html>

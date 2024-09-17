@@ -45,6 +45,7 @@ const getWeather = async function (city) {
     weatherSearchInput.value = "";
   } catch (error) {
     console.error(error);
+    throw new Error("Trouble getting weather");
   }
 };
 
