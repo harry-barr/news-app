@@ -178,14 +178,14 @@ body {
   align-items: center;
   justify-content: center;
   position: sticky;
+  flex-wrap: nowrap;
 }
 .tab-container .tabs {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 60px;
   font-weight: 600;
   font-size: 1.75rem;
-  position: sticky;
 }
 
 .get-news-btn {
@@ -197,7 +197,6 @@ body {
   font-weight: 600;
   font-size: 1.4rem;
   cursor: pointer;
-  margin-right: 40px;
   letter-spacing: 2px;
   padding-bottom: 6px;
 }
@@ -227,6 +226,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 0;
 }
 
 .news-container .main-news {
@@ -406,14 +406,65 @@ BURGER MENU STYLES
 
 */
 .burger-menu {
-  display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   display: none;
+  z-index: 11;
+}
+
+.burger-btn {
+  background: none;
+  border: none;
+  color: #cfb53b;
+  margin-bottom: 80px;
   cursor: pointer;
 }
 
 .burger-menu .fa-bars {
+  font-size: 4rem;
+}
+
+.nav-menu {
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  height: fit-content;
+  min-width: 90vw;
+  border-radius: 1rem;
+  align-items: center;
+  display: none;
+  background: linear-gradient(100deg, #2f1d1d, #303030);
+  width: 95vw;
+  height: 75vh;
+}
+.nav-menu.open {
+  display: flex; /* Show menu */
+}
+.nav-menu ul {
+  list-style-type: none;
+}
+.list-item {
+  padding: 0.5rem 3rem;
+  margin: 0.25rem;
+  background: linear-gradient(100deg, #2f1d1d, #303030);
+  border-radius: 10px;
   font-size: 2rem;
+  color: #cfb53b;
+  min-width: 50vw;
+  text-align: left;
+  border: none;
+}
+.list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.nav-live {
+  color: white;
 }
 
 /* 
@@ -431,6 +482,7 @@ BURGER MENU STYLES
 
   .header {
     margin-left: 50px;
+    gap: 300px;
   }
 
   .line-div-2 {
@@ -450,10 +502,15 @@ BURGER MENU STYLES
   }
   .title-div p {
     font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .input-articles {
+    margin-top: 10px;
   }
   .burger-menu {
     display: flex;
-    margin-right: 0px;
+    margin-right: 50px;
   }
   .news-container .main-news {
     display: flex;
@@ -506,5 +563,64 @@ BURGER MENU STYLES
   }
   .small-news {
     grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    gap: 60px;
+  }
+  .news-container .main-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    z-index: 0;
+  }
+  .news-tile-img {
+    height: 200px;
+  }
+  .news-container .main-news .main-news-left,
+  .news-container .main-news .main-news-right {
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+    width: 330px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow instead of border */
+    color: rgb(255, 255, 255);
+    opacity: 0.95;
+  }
+  .news-tile-desc {
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8rem; /* Adjust for balance */
+    line-height: 1; /* Improve readability */
+    color: #e0e0e0; /* Softer color for description */
+  }
+  .news-tile-headline {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1rem; /* Increase size */
+    line-height: 1; /* Increase spacing between lines */
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    color: #ffffff; /* Use a bright color for contrast */
+    font-family: "Arial", sans-serif; /* Modern sans-serif font */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .tab-container .tabs {
+    gap: 30px;
+  }
+  .tab-container .tabs .get-news-btn {
+    font-size: 1.2rem;
   }
 }

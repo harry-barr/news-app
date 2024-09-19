@@ -40,32 +40,40 @@
         </div>
       </div>
       <div class="burger-menu">
-        <div><i class="fa-solid fa-bars"></i></div>
+        <button class="burger-btn"><i class="fa-solid fa-bars"></i></button>
       </div>
-    </div>
 
+      <nav class="nav-menu">
+        <ul class="list-items">
+          <li><button class="list-item" value="headlines">Home</button></li>
+          <li><button class="list-item" value="technology">Tech</button></li>
+          <li><button class="list-item" value="business">Business</button></li>
+          <li><button class="list-item" value="science">Science</button></li>
+          <li>
+            <button class="list-item" value="entertainment">
+              Entertainment
+            </button>
+          </li>
+          <li><button class="list-item" value="sport">Sport</button></li>
+        </ul>
+      </nav>
+    </div>
     <div class="line-div">
       <hr />
     </div>
 
     <div class="tab-container">
       <nav class="tabs">
-        <div>
-          <button class="get-news-btn home-btn active" value="headlines">
-            Home
-          </button>
-          <button class="get-news-btn technology" value="technology">
-            Tech
-          </button>
-          <button class="get-news-btn business" value="business">
-            Business
-          </button>
-          <button class="get-news-btn science" value="science">Science</button>
-          <button class="get-news-btn entertainment" value="entertainment">
-            Entertainment
-          </button>
-          <button class="get-news-btn sport" value="sport">Sport</button>
-        </div>
+        <button class="get-news-btn home-btn active" value="headlines">
+          Home
+        </button>
+        <button class="get-news-btn technology" value="technology">Tech</button>
+        <button class="get-news-btn business" value="business">Business</button>
+        <button class="get-news-btn science" value="science">Science</button>
+        <button class="get-news-btn entertainment" value="entertainment">
+          Entertainment
+        </button>
+        <button class="get-news-btn sport" value="sport">Sport</button>
       </nav>
     </div>
     <div class="line-div-2"><hr /></div>
@@ -82,5 +90,6 @@
     <script type="module" src="getWeather.js"></script>
     <script type="module" src="getNews.js"></script>
     <script type="module" src="searchArticles.js"></script>
+    <script type="module" src="burger-menu.js"></script>
   </body>
 </html>

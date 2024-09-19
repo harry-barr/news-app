@@ -6,6 +6,16 @@ const getNewsBtns = document.querySelectorAll(".get-news-btn");
 const mainNews = document.querySelector(".main-news");
 const smallNews = document.querySelector(".small-news");
 const alsoInTheNews = document.querySelector(".small-news-title");
+const burgerBtn = document.querySelector(".burger-btn");
+const navMenu = document.querySelector(".nav-menu");
+const newsContainer = document.querySelector(".news-container");
+const listItems = document.querySelectorAll(".list-item");
+
+/*
+
+  NORMAL SIZE FUNCTIONS
+
+*/
 
 const loadHomePageNews = async function () {
   mainNews.innerHTML = "";
@@ -117,4 +127,57 @@ const getNews = async function (e) {
 
 getNewsBtns.forEach((btn) => {
   btn.addEventListener("click", getNews);
+});
+
+/* 
+
+  BURGER MENU FUNCTIONS
+
+*/
+
+/* BURGER MENU FUNCTIONS */
+
+const getBurgerNews = async function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  smallNews.style.display = "";
+  mainNews.innerHTML = "";
+  smallNews.innerHTML = "";
+  alsoInTheNews.style.display = "";
+  let active = document.querySelector(".nav-live");
+  if (active) active.classList.remove("nav-live");
+  e.currentTarget.classList.add("nav-live");
+  const listCategory = e.currentTarget.value;
+  const articles = await fetchNews(listCategory);
+  if (articles) {
+    renderArticles(articles);
+  }
+};
+
+burgerBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+  newsContainer.style.marginTop = navMenu.classList.contains("open")
+    ? "160px"
+    : "0";
+});
+
+// Close menu on outside click
+document.addEventListener("click", (e) => {
+  if (!navMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+    navMenu.classList.remove("open");
+    newsContainer.style.marginTop = "0"; // Reset margin
+  }
+});
+
+// Close menu on window resize
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    navMenu.classList.remove("open"); // Close menu on larger screens
+    newsContainer.style.marginTop = "0"; // Reset margin
+  }
+});
+
+// Add event listeners to burger menu items
+listItems.forEach((item) => {
+  item.addEventListener("click", getBurgerNews);
 });

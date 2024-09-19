@@ -86,12 +86,7 @@ const getQueryArticles = async function () {
       ${data.articles[5].description}
       </p>
     </div>
-    <button class="load-more-btn-2">Load More</button>`;
-      mainNews.insertAdjacentHTML("beforeend", moreNews);
-
-      function loadMore2() {
-        loadMoreBtn2.style.display = "none";
-        const moreNews = `<div class="main-news-left">
+    <div class="main-news-left">
         <a href="${data.articles[6].url}" target="_blank">
         <img src="${data.articles[6].urlToImage}" class="news-tile-img"> 
         </a>   
@@ -109,6 +104,51 @@ const getQueryArticles = async function () {
         <hr class="news-tile-divider" />
         <p class="news-tile-desc">
         ${data.articles[7].description}
+        </p>
+      </div>
+    <button class="load-more-btn-2">Load More</button>`;
+      mainNews.insertAdjacentHTML("beforeend", moreNews);
+
+      function loadMore2() {
+        loadMoreBtn2.style.display = "none";
+        const moreNews = `<div class="main-news-left">
+        <a href="${data.articles[8].url}" target="_blank">
+        <img src="${data.articles[8].urlToImage}" class="news-tile-img"> 
+        </a>   
+        <a href="${data.articles[8].url}" target="_blank"><h2 class="news-tile-headline">${data.articles[8].title}</h2></a>
+        <hr class="news-tile-divider" />
+        <p class="news-tile-desc">
+          ${data.articles[8].description}
+        </p>
+      </div>
+      <div class="main-news-right">
+        <a href="${data.articles[9].url}" target="_blank">
+        <img src="${data.articles[9].urlToImage}" class="news-tile-img"> 
+        </a>
+        <a href="${data.articles[9].url}" target="_blank"><h2 class="news-tile-headline">${data.articles[9].title}</h2></a>
+        <hr class="news-tile-divider" />
+        <p class="news-tile-desc">
+        ${data.articles[9].description}
+        </p>
+      </div>
+      <div class="main-news-left">
+        <a href="${data.articles[10].url}" target="_blank">
+        <img src="${data.articles[10].urlToImage}" class="news-tile-img"> 
+        </a>   
+        <a href="${data.articles[10].url}" target="_blank"><h2 class="news-tile-headline">${data.articles[10].title}</h2></a>
+        <hr class="news-tile-divider" />
+        <p class="news-tile-desc">
+          ${data.articles[10].description}
+        </p>
+      </div>
+      <div class="main-news-right">
+        <a href="${data.articles[11].url}" target="_blank">
+        <img src="${data.articles[11].urlToImage}" class="news-tile-img"> 
+        </a>
+        <a href="${data.articles[11].url}" target="_blank"><h2 class="news-tile-headline">${data.articles[11].title}</h2></a>
+        <hr class="news-tile-divider" />
+        <p class="news-tile-desc">
+        ${data.articles[11].description}
         </p>
       </div>`;
         mainNews.insertAdjacentHTML("beforeend", moreNews);
