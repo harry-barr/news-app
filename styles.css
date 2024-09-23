@@ -485,7 +485,8 @@ BURGER MENU STYLES
 @media screen and (max-width: 768px) {
   .tab-container,
   .line-div,
-  .weather-div {
+  .weather-div,
+  .nav-container {
     display: none;
   }
 
